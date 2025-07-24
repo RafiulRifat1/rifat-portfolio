@@ -16,7 +16,14 @@ const HeroSection = () => {
           frameBorder="0"
           width="100%"
           height="100%"
-          className="absolute inset-0"
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ 
+            transform: 'translate(-50%, -50%)',
+            top: '50%',
+            left: '50%',
+            width: '120%',
+            height: '120%'
+          }}
         />
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-background/20" />
