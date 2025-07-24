@@ -13,13 +13,13 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           clearInterval(timer);
-          setTimeout(onComplete, 500);
+          setTimeout(onComplete, 800);
           return 100;
         }
-        const diff = Math.random() * 10;
+        const diff = Math.random() * 8 + 2; // More consistent progress
         return Math.min(oldProgress + diff, 100);
       });
-    }, 100);
+    }, 80);
 
     return () => {
       clearInterval(timer);
