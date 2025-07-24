@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -18,7 +19,7 @@ const HeroSection = () => {
           height="100%"
           className="absolute inset-0"
           style={{ 
-            left: '10%',
+            left: '0%',
             width: '100%',
             height: '100%'
           }}
@@ -32,7 +33,7 @@ const HeroSection = () => {
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-24 h-24 rounded-full bg-gradient-glow opacity-30"
+            className="absolute w-12 h-12 md:w-24 md:h-24 rounded-full bg-gradient-glow opacity-30"
             style={{
               left: `${10 + i * 20}%`,
               top: `${20 + (i % 2) * 50}%`,
