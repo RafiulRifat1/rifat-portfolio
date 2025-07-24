@@ -16,9 +16,9 @@ const HeroSection = () => {
           frameBorder="0"
           width="100%"
           height="100%"
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0"
           style={{ 
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-30%, -50%)',
             top: '50%',
             left: '50%',
             width: '120%',
