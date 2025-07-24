@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -38,10 +39,10 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { name: "GitHub", icon: "🐙", href: "https://github.com" },
-    { name: "LinkedIn", icon: "💼", href: "https://linkedin.com" },
-    { name: "Twitter", icon: "🐦", href: "https://twitter.com" },
-    { name: "Email", icon: "📧", href: "mailto:hello@rifat.dev" },
+    { name: "GitHub", icon: Github, href: "https://github.com/rifat" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/rifat" },
+    { name: "Twitter", icon: Twitter, href: "https://twitter.com/rifat" },
+    { name: "Email", icon: Mail, href: "mailto:hello@rifat.dev" },
   ];
 
   const containerVariants = {
@@ -201,8 +202,8 @@ const ContactSection = () => {
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center text-xl">
-                    📍
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                    <MapPin size={20} className="text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
@@ -215,8 +216,8 @@ const ContactSection = () => {
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center text-xl">
-                    📧
+                  <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center">
+                    <Mail size={20} className="text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
@@ -229,8 +230,8 @@ const ContactSection = () => {
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center text-xl">
-                    📱
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                    <Phone size={20} className="text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
@@ -250,32 +251,37 @@ const ContactSection = () => {
               </h3>
               
               <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group bg-glass-bg/50 border border-glass-border rounded-xl p-4 text-center hover:bg-glass-bg/70 transition-all duration-300"
-                    whileHover={{ 
-                      scale: 1.05,
-                      y: -5
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    variants={itemVariants}
-                    custom={index}
-                  >
-                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {social.icon}
-                    </div>
-                    <p className="text-sm font-light text-muted-foreground group-hover:text-foreground transition-colors">
-                      {social.name}
-                    </p>
-                    
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-gradient-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                  </motion.a>
-                ))}
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative bg-glass-bg/50 border border-glass-border rounded-xl p-4 text-center hover:bg-glass-bg/70 transition-all duration-300 overflow-hidden"
+                      whileHover={{ 
+                        scale: 1.05,
+                        y: -5
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      variants={itemVariants}
+                      custom={index}
+                    >
+                      <div className="relative z-10">
+                        <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent size={24} className="text-neon-blue group-hover:text-neon-cyan transition-colors duration-300" />
+                        </div>
+                        <p className="text-sm font-light text-muted-foreground group-hover:text-foreground transition-colors">
+                          {social.name}
+                        </p>
+                      </div>
+                      
+                      {/* Hover glow effect */}
+                      <div className="absolute inset-0 bg-gradient-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    </motion.a>
+                  );
+                })}
               </div>
             </motion.div>
           </motion.div>
