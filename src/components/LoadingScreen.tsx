@@ -16,7 +16,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           setTimeout(onComplete, 800);
           return 100;
         }
-        const diff = Math.random() * 8 + 2; // More consistent progress
+        const diff = Math.random() * 8 + 2; 
         return Math.min(oldProgress + diff, 100);
       });
     }, 80);
@@ -36,7 +36,6 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         transition: { duration: 0.8, ease: "easeInOut" }
       }}
     >
-      {/* Background glow effects */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-glow"
@@ -65,7 +64,6 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         />
       </div>
 
-      {/* Main loading content */}
       <div className="relative z-10 text-center">
         {/* Animated logo/name */}
         <motion.h1
@@ -83,7 +81,6 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           </span>
         </motion.h1>
 
-        {/* Progress bar container */}
         <div className="w-80 mx-auto mb-8">
           <motion.div
             className="h-1 bg-glass-border rounded-full overflow-hidden backdrop-blur-sm"
@@ -96,12 +93,10 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               style={{ width: `${progress}%` }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              {/* Glow effect on progress bar */}
               <div className="absolute inset-0 bg-gradient-primary shadow-glow" />
             </motion.div>
           </motion.div>
           
-          {/* Progress percentage */}
           <motion.p
             className="text-muted-foreground text-sm mt-4 font-light tracking-widest"
             initial={{ opacity: 0 }}
@@ -112,7 +107,6 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           </motion.p>
         </div>
 
-        {/* Loading text */}
         <motion.p
           className="text-muted-foreground font-light tracking-widest"
           initial={{ opacity: 0 }}
@@ -123,7 +117,6 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         </motion.p>
       </div>
 
-      {/* Floating particles */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}

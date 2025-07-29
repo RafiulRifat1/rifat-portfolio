@@ -18,7 +18,6 @@ const Footer = () => {
 
   return (
     <footer className="relative py-16 px-6 overflow-hidden">
-      {/* Floating background particles */}
       <div className="absolute inset-0">
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -96,7 +95,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-light text-neon-violet">Connect</h4>
             <div className="flex space-x-4">
@@ -127,7 +125,6 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Divider */}
         <motion.div
           className="h-px bg-gradient-to-r from-transparent via-glass-border to-transparent mb-8"
           initial={{ scaleX: 0 }}
@@ -136,7 +133,6 @@ const Footer = () => {
           viewport={{ once: true }}
         />
 
-        {/* Copyright */}
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"
           initial={{ opacity: 0, y: 20 }}

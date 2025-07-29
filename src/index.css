@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {
-    /* Base colors for dark futuristic theme */
     --background: 220 27% 8%;
     --foreground: 210 40% 98%;
 
@@ -18,18 +14,15 @@ All colors MUST be HSL.
     --popover: 220 23% 11%;
     --popover-foreground: 210 40% 98%;
 
-    /* Primary - Electric Blue */
     --primary: 217 91% 60%;
     --primary-foreground: 220 27% 8%;
 
-    /* Secondary - Cyan */
     --secondary: 180 100% 70%;
     --secondary-foreground: 220 27% 8%;
 
     --muted: 220 20% 15%;
     --muted-foreground: 215 20% 65%;
 
-    /* Accent - Violet */
     --accent: 259 94% 51%;
     --accent-foreground: 210 40% 98%;
 
@@ -42,7 +35,6 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom portfolio colors */
     --neon-blue: 217 91% 60%;
     --neon-cyan: 180 100% 70%;
     --neon-violet: 259 94% 51%;

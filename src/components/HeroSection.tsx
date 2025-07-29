@@ -1,32 +1,15 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import SplineScene from "./SplineScene";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Spline 3D Model */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.5, duration: 1.5 }}
-      >
-        <iframe
-          src="https://my.spline.design/worldplanet-bgp1VAkTRMpwxYpVrXgt6TJs/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          className="absolute inset-0"
-          style={{ 
-            left: '0%',
-            width: '100%',
-            height: '100%'
-          }}
-        />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-background/20" />
-      </motion.div>
+      <div className="absolute inset-0 z-0">
+        <SplineScene />
+      </div>
+      
+      <div className="absolute inset-0 bg-background/20 z-0" />
 
       {/* Floating orbs */}
       <div className="absolute inset-0 z-10">
@@ -58,7 +41,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 2.8, duration: 1 }}
+          transition={{ delay: 0.8, duration: 1 }}
         >
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">
             Hi, I'm{" "}
@@ -76,7 +59,7 @@ const HeroSection = () => {
           className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3.2, duration: 0.8 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
         >
           Crafting digital experiences that inspire and engage through innovative design and cutting-edge technology.
         </motion.p>
@@ -84,7 +67,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 3.6, duration: 0.6 }}
+          transition={{ delay: 1.6, duration: 0.6 }}
         >
           <Button
             size="lg"
@@ -106,26 +89,6 @@ const HeroSection = () => {
               />
             </motion.a>
           </Button>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 4, duration: 0.8 }}
-        >
-          <motion.div
-            className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center"
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <motion.div
-              className="w-1 h-3 bg-muted-foreground rounded-full mt-2"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </motion.div>
         </motion.div>
       </div>
     </section>

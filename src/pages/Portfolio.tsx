@@ -12,13 +12,11 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Prevent scroll during loading
     if (isLoading) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-
     return () => {
       document.body.style.overflow = "unset";
     };

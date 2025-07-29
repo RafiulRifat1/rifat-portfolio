@@ -18,7 +18,7 @@ const AboutSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -29,7 +29,7 @@ const AboutSection = () => {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.8 },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -51,7 +51,7 @@ const AboutSection = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
           className="grid lg:grid-cols-2 gap-16 items-center"
           variants={containerVariants}
@@ -59,7 +59,6 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Profile Image */}
           <motion.div
             className="relative flex justify-center lg:justify-start"
             variants={itemVariants}
@@ -72,7 +71,6 @@ const AboutSection = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              {/* Glowing background circle */}
               <div className="absolute inset-0 bg-gradient-primary rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
               
               {/* Main image container */}
@@ -83,11 +81,9 @@ const AboutSection = () => {
                   className="w-full h-full object-cover"
                 />
                 
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               </div>
 
-              {/* Floating accent elements */}
               <motion.div
                 className="absolute -top-4 -right-4 w-8 h-8 bg-neon-cyan rounded-full"
                 animate={{
@@ -120,11 +116,11 @@ const AboutSection = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             <div>
               <motion.h2
-                className="text-4xl md:text-5xl font-light mb-6"
+                className="text-4xl md:text-5xl font-light mb-6 tracking-tight"
                 variants={itemVariants}
               >
                 About{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-primary bg-clip-text text-transparent font-normal">
                   Me
                 </span>
               </motion.h2>
@@ -146,7 +142,7 @@ const AboutSection = () => {
 
             {/* Skills Grid */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-light mb-6 text-neon-cyan">
+              <h3 className="text-xl font-normal tracking-tight mb-6 text-neon-cyan">
                 Skills & Technologies
               </h3>
               
@@ -172,8 +168,6 @@ const AboutSection = () => {
                     <p className="text-sm font-light text-muted-foreground group-hover:text-foreground transition-colors">
                       {skill.name}
                     </p>
-                    
-                    {/* Hover glow effect */}
                     <div className="absolute inset-0 bg-gradient-primary rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                   </motion.div>
                 ))}

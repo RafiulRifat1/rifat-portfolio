@@ -22,14 +22,13 @@ const Navigation = () => {
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <motion.div
-              className="text-xl font-light tracking-wider"
+              className="text-xl font-normal tracking-wider"
               whileHover={{ scale: 1.05 }}
             >
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Rifat
-              </span>
+              <a href="#home" className="text-2xl tracking-wider bg-gradient-primary bg-clip-text text-transparent">
+                RIFAT
+              </a>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -38,11 +37,11 @@ const Navigation = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-light tracking-wide"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-wide"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2 + index * 0.1 }}
-                  whileHover={{ 
+                  whileHover={{
                     y: -2,
                     color: "hsl(var(--neon-blue))",
                     transition: { duration: 0.2 }
@@ -55,7 +54,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden text-foreground focus:outline-none"
+              className="md:hidden text-foreground focus:outline-none z-50" 
               onClick={() => setIsOpen(!isOpen)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -66,11 +65,11 @@ const Navigation = () => {
                   className="w-full h-0.5 bg-current transform transition-all duration-300"
                   animate={{
                     rotate: isOpen ? 45 : 0,
-                    y: isOpen ? 2 : -2,
+                    y: isOpen ? 1 : -2, 
                   }}
                 />
                 <motion.span
-                  className="w-full h-0.5 bg-current transform transition-all duration-300"
+                  className="w-full h-0.5 bg-current transform transition-all duration-300 my-1"
                   animate={{
                     opacity: isOpen ? 0 : 1,
                   }}
@@ -79,7 +78,7 @@ const Navigation = () => {
                   className="w-full h-0.5 bg-current transform transition-all duration-300"
                   animate={{
                     rotate: isOpen ? -45 : 0,
-                    y: isOpen ? -2 : 2,
+                    y: isOpen ? -1 : 2,
                   }}
                 />
               </div>
@@ -110,7 +109,7 @@ const Navigation = () => {
                 opacity: isOpen ? 1 : 0,
                 x: isOpen ? 0 : 50,
               }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: isOpen ? 0.1 * index : 0 }}
               onClick={() => setIsOpen(false)}
               whileHover={{
                 scale: 1.1,
